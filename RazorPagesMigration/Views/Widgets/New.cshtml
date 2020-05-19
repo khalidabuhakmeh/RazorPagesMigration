@@ -1,0 +1,15 @@
+@model RazorPagesMigration.Models.Widgets.EditModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h2>New</h2>
+
+<form method="post" asp-action="Create">
+    <label asp-for="Name"></label>
+    <input asp-for="Name" />
+    <span asp-validation-for="Name"></span>
+    <button type="submit">Save Widget</button>
+</form>

@@ -1,0 +1,47 @@
+@page
+@model RazorPagesMigration.Pages.Widgets.Index
+
+@{
+
+}
+
+<h2>
+    Widgets!
+    <a asp-page="Create" class="btn btn-primary float-right">
+        Add New Widget
+    </a>
+</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var w in Model.All)
+            {
+                <tr>
+                    <td>@w.Id</td>
+                    <td>
+                        <a asp-page="Edit" asp-route-id="@w.Id">
+                            @w.Name
+                        </a>
+                    </td>
+                    <td>
+                        <form method="post" asp-page-handler="Delete" asp-route-id="@w.Id">
+                            <button type="submit" class="btn btn-danger">
+                                Delete
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>

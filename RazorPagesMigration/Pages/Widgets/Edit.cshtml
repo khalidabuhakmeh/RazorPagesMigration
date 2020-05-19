@@ -1,0 +1,9 @@
+@page "{id:int}"
+@model RazorPagesMigration.Pages.Widgets.Edit
+<h2>Edit</h2>
+<form method="post" asp-page="edit" asp-route-id="@Model.Id">
+    <label asp-for="Name"></label>
+    <input asp-for="Name" />
+    <span asp-validation-for="Name"></span>
+    <button type="submit">Save Widget</button>
+</form>

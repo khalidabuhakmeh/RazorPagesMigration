@@ -1,0 +1,9 @@
+@page
+@model RazorPagesMigration.Pages.Widgets.Create
+<h2>Create</h2>
+<form method="post" asp-page="Create">
+    <label asp-for="Name"></label>
+    <input asp-for="Name" />
+    <span asp-validation-for="Name"></span>
+    <button type="submit">Save Widget</button>
+</form>
